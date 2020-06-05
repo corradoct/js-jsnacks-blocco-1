@@ -165,3 +165,186 @@
 //
 // // Stampo il messaggio
 // message.innerHTML = 'La somma dei quattro numeri è ' + somma;
+
+
+// ////////////////////////////// JSnack 6
+
+// Fai inserire un numero, che chiameremo N, all’utente.
+// Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
+// Ogni volta che ne crei uno, stampalo a schermo.
+
+// // Chiedo il numero all'utente
+//  var n = parseInt(prompt('Inserisci un numero da 1 a 10'));
+//
+// // Creo e stampo n volte l'array in base al numero che ha inserito l'utente
+//  for (var i = 0; i < n; i++) {
+//   var array = generaArray();
+//   console.log(array);
+//  }
+//
+// // Funzione che genera un array di 10 numeri interi casuali
+// // Ritorna array generato
+//  function generaArray () {
+//    var arrayNumeri = [];
+//    for (var i = 0; i < 10; i++) {
+//      var number = Math.floor(Math.random() * 100) + 1;
+//      arrayNumeri.push(number);
+//      }
+//      return arrayNumeri;
+//  }
+
+
+// ///////////////////////////  JSnack 7
+
+// Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di
+// cognomi, Gatsby vuole generare una falsa lista di invitati.
+
+
+// // Creo la variabile per l'elemento html
+// var message = document.getElementById('message');
+//
+// // Creo array nomi
+// var arrayNomi = ['topolino', 'pippo', 'paperino', 'pluto'];
+//
+// // Creo array cognomi
+// var arrayCognomi = ['rossi', 'bianchi', 'verdi', 'gialli'];
+//
+// // Creo le variabili che mi serviranno per la lista di nomi e cogmoni casuali
+// var numeroInvitatiFalsi = 5;
+// var nome = '';
+// var cognome = '';
+// var listaFalsa = [];
+//
+// // Creo un ciclo for per scorrere i due array, selezionare i valori tramite indice e comporre il nuovo array di invitati falsi
+// for (var i = 0; i < numeroInvitatiFalsi; i++) {
+//
+//   // Assegno alle rispettive variabili il valore preso tramite indici generati casualmente
+//   var indiceCasualeNome = Math.floor(Math.random() * arrayNomi.length);
+//   nome = arrayNomi[indiceCasualeNome];
+//   var indiceCasualeCognome = Math.floor(Math.random() * arrayCognomi.length);
+//   cognome = arrayCognomi[indiceCasualeCognome];
+//
+//   // Concateno i valori presi e li inserisco nel novo array
+//   var nomeFalsoCompleto = nome + ' ' + cognome;
+//   listaFalsa.push(nomeFalsoCompleto);
+// }
+//
+// // Stampo a video la lista creata
+// message.innerHTML = listaFalsa;
+
+
+// //////////////////////////  JSnack 8
+
+// Crea due array che hanno un numero di elementi diversi.
+// Aggiungi elementi casuali all’array che ha meno elementi, fino a quando ne avrà
+// tanti quanti l’altro.
+
+// // Creo la variabile per l'elemento
+// var message = document.getElementById('message');
+//
+// // Creo array nomi e conservo la lunghezza dell'array in una variabile
+// var arrayNomi = ['pippo', 'paperino', 'pluto', 'zio paperone'];
+// var lunghezzaArrayNomi = arrayNomi.length;
+//
+// // Creo array cognomi e conservo la lunghezza dell'array in una variabile
+// var arrayCognomi = ['qui', 'quo', 'qua', 'topolino'];
+// var lunghezzaArrayCognomi = arrayCognomi.length;
+//
+// // Tramite un ciclo if controllo le lunghezze degli array. Se un array è piu corto dell'altro, invoco la funzione per aggiungere elementi
+// // all'array più corto in modo da fargli raggiungere la stessa lunghezza di quello pià lungo.
+// // Se sono di uguale lunghezza non faccio nulla
+// var lunghezze = 0;
+// if (lunghezzaArrayNomi < lunghezzaArrayCognomi) {
+//   arrayNomi = riempiArray(arrayNomi, lunghezzaArrayCognomi);
+//   lunghezze = 1;
+// }else if (lunghezzaArrayNomi > lunghezzaArrayCognomi) {
+//   arrayCognomi = riempiArray(arrayCognomi, lunghezzaArrayNomi);
+//   lunghezze = 2;
+// }
+//
+// // Dopo aver ottenuto il risultato del ciclo if, stampo a video il messaggio finale
+// if (lunghezze === 1) {
+//   message.innerHTML = 'Il primo array è più corto del secondo, quindi ho aggiunto elementi casuali al primo array.' + '<br>' + arrayNomi + '<br>' + arrayCognomi;
+// } else if (lunghezze === 2) {
+//   message.innerHTML = 'Il secondo array è più corto del primo, quindi ho aggiunto elementi casuali al secondo array.' + '<br>' + arrayNomi + '<br>' + arrayCognomi;
+// } else {
+//   message.innerHTML = 'Gli array hanno la stessa lunghezza, quindi non ho modificato nulla.' + '<br>' + arrayNomi + '<br>' + arrayCognomi;
+// }
+//
+// //  ************************  FUNZIONI******************* //
+//
+// // Funzione che, tramite un ciclo while, modifica l'array originale, riempendolo con elementi casuali, fino al raggiungimento della lunghezza desiderata
+// // Argomenti :
+// //             ==> array da riempire : l'array più corto che deve essere modificato
+// //             ==> lunghezza da raggiungere : la lunghezza dell'array più lungo
+// // Ritorna il nuovo array modificato
+// function riempiArray (arrayDaRiempire, lunghezzaDaRaggiungere) {
+//   while (arrayDaRiempire.length < lunghezzaDaRaggiungere) {
+//     var elementoCasuale = Math.floor(Math.random() * 10);
+//     arrayDaRiempire.push(elementoCasuale);
+//   }
+//   return arrayDaRiempire;
+// }
+
+
+// //////////////////////////   JSnack 9
+
+// Crea due tag div con due id diversi: un div avrà il testo colorato di rosso mentre l’altro di verde.
+// Partendo da un array di numeri, stampiamo nell’id rosso i numeri dispari e in verde i numeri pari.
+
+
+// Creo la variabile per l'elemento
+var divRed = document.getElementById('red');
+var divGreen = document.getElementById('green');
+
+// Creo l'array dei numeri
+var arrayNumeri = [1, 51, 23, 78, 99, 150, 22, 66];
+
+// Creo le variabili per separare i numeri pari dai numeri dispari
+var listaRed = '';
+var listaGreen = '';
+
+
+// // *****************  Versione senza la funzione  **************** //
+// // Tramite un ciclo for scorro l'array e con un ciclo if individuo i numeri pari e i numeri dispari e li assegno alle variabili sopra dichiarate
+// for (var i = 0; i < arrayNumeri.length; i++) {
+//   if (arrayNumeri[i] % 2 === 0) {
+//     listaGreen += arrayNumeri[i] + ',';
+//   } else {
+//     listaRed += arrayNumeri[i] + ',';
+//   }
+// }
+//
+// // Stampo a video il risultato
+// divGreen.innerHTML = listaGreen;
+// divRed.innerHTML = listaRed;
+
+
+
+// *****************  Versione con la funzione  **************** //
+// // Tramite un ciclo for scorro l'array e con la funzione pariDispari e un ciclo if individuo i numeri pari e i numeri dispari e li assegno alle variabili sopra dichiarate
+// for (var i = 0; i < arrayNumeri.length; i++) {
+//   var numeroPariDispari = pariDispari(arrayNumeri[i]);
+//   if (numeroPariDispari) {
+//     listaGreen += arrayNumeri[i] + ',';
+//   } else {
+//     listaRed += arrayNumeri[i] + ',';
+//   }
+// }
+//
+// // Stampo a video il risultato
+// divRed.innerHTML = listaRed;
+// divGreen.innerHTML = listaGreen;
+//
+// // *************************  FUNZIONI  ************************ //
+// // Funzione che stabilisce se il numero è pari o dispari
+// // Argomenti:
+// //            ==> numero : il numero da controllare
+// // Ritorna true se il numero è pari, altrimenti false se il numero è dispari.
+// function pariDispari (numero) {
+//   var controlloPariDispari = false;
+//   if (numero % 2 === 0) {
+//   controlloPariDispari = true;
+//   }
+//   return controlloPariDispari;
+// }
